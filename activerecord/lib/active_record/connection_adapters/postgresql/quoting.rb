@@ -80,7 +80,7 @@ module ActiveRecord
             elsif value.hex?
               "X'#{value}'"
             end
-          when Float
+          when Float, BigDecimal
             if value.infinite? || value.nan?
               "'#{value}'"
             else

@@ -1161,4 +1161,8 @@
 
     *Yves Senn*
 
+*   Correctly quote BigDecimal NaN and infinity for PostgreSQL
+
+    *Ben Eddy*
+
 Please check [4-2-stable](https://github.com/rails/rails/blob/4-2-stable/activerecord/CHANGELOG.md) for previous changes.

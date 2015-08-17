@@ -27,6 +27,16 @@ module ActiveRecord
           assert_equal "'Infinity'", @conn.quote(infinity)
         end
 
+        def test_quote_big_decimal_nan
+          nan = BigDecimal::NAN
+          assert_equal "'NaN'", @conn.quote(nan)
+        end
+
+        def test_quote_big_decimal_infinity
+          infinity = BigDecimal::INFINITY
+          assert_equal "'Infinity'", @conn.quote(infinity)
+        end
+
         def test_quote_range
           range = "1,2]'; SELECT * FROM users; --".."a"
           type = OID::Range.new(Type::Integer.new, :int8range)
